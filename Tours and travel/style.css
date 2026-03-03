@@ -214,6 +214,7 @@ body {
   align-items: center;
   gap: 2rem;
 }
+
 .about-img {
   background-image: url("./image/about.jpeg");
   height: 80%;
@@ -644,6 +645,9 @@ body {
     flex-direction: column;
     height: auto;
     padding: 10px 10px;
+  }
+  .about-us h1 {
+      font-size: 35px;
   }
   .about-img {
     width: 100%;
