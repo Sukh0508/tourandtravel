@@ -190,7 +190,7 @@ body {
   color: var(--gold);
 }
 .hero-img {
-  background-image: url("./image/home.png");
+  background-image: url("./image/home.jpeg");
   width: 100%;
   background-size: cover;
   background-position: center;
@@ -228,6 +228,22 @@ body {
   font-size: 22px;
   padding: 20px 0px;
   text-align: justify;
+}
+.ujjain-img{
+    background-image: url("./image/ujjain.jpg");
+   height: 80%;
+      width: 50%;
+      border-radius: 28px;
+  background-size: cover;
+  background-position: center;
+}
+.saibaba-img{
+    background-image: url("./image/saibaba.png");
+   height: 80%;
+      width: 50%;
+      border-radius: 28px;
+  background-size: cover;
+  background-position: center;
 }
 /* === SERVICES GRID (responsive) === */
 .section-heading {
@@ -704,9 +720,19 @@ swiper-slide {
   .about-us{
     flex-direction: column;
     height: auto;
-    padding: 0px 10px;
+    padding: 10px 10px;
   }
   .about-img
+  {
+    width: 100%;
+    height: 50vh;
+  }
+  .ujjain-img
+  {
+    width: 100%;
+    height: 50vh;
+  }
+  .saibaba-img
   {
     width: 100%;
     height: 50vh;
@@ -1035,51 +1061,68 @@ swiper-slide {
   margin: 0 auto;
   padding: 0 2rem;
     }
+    .fleet-section h1{
+      /* border: 2px solid firebrick; */
+      text-align: center;
+      font-size: 50px;
+    }
+    .main-feet-section{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
 
     /* premium headings (as seen on merasaitravels.com) */
-    .section-tag {
+    /* .section-tag {
       font-size: 0.9rem;
       letter-spacing: 3px;
       text-transform: uppercase;
       color: #b59d7a;
       font-weight: 500;
       margin-bottom: 1rem;
+      border: 5px solid red;
       text-align: center;
-    }
+    } */
 
-    .section-title {
+    /* .section-title {
       font-size: 2.8rem;
       font-weight: 400;
       line-height: 1.2;
       text-align: center;
+      border: 5px solid red;
       color: #1f2a3a;
       margin-bottom: 1rem;
       font-family: 'Times New Roman', serif;
-    }
+    } */
 
-    .section-title span {
+    /* .section-title span {
       font-style: italic;
       color: #b59d7a;
       font-weight: 300;
-    }
-
+      border: 5px solid red;
+    } */
+/* 
     .section-subhead {
       text-align: center;
       max-width: 700px;
       margin: 0 auto 3.5rem auto;
+      border: 5px solid red;
       color: #4a5568;
       font-size: 1.1rem;
       line-height: 1.6;
       border-bottom: 1px solid rgba(181, 157, 122, 0.2);
       padding-bottom: 2rem;
-    }
+    } */
 
     /* === FLEET GRID – animated cards === */
     .fleet-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      /* display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
       gap: 2rem;
+      display: flex;
       margin-top: 1.5rem;
+      /* border: 5px solid red; */
     }
 
     /* card base */
@@ -1277,11 +1320,21 @@ swiper-slide {
       text-transform: capitalize;
     }
       .section-title { font-size: 2rem; }
-      .fleet-grid { gap: 1.2rem; }
+      .fleet-grid { gap: 1.2rem;
+        padding: 0px 10px;
+       }
       .fleet-card{
         /* border: 2px solid red; */
-        width: 90%;
-        margin-left: 5%;
+        width: 100%;
+        
+        /* margin-left: 5%; */
+      }
+      .main-feet-section{
+        /* border: 2px solid red; */
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        gap: 0;
       }
     }
 
