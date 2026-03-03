@@ -2,7 +2,6 @@
 * {
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
   box-sizing: border-box;
   font-family:
     "Inter",
@@ -11,6 +10,13 @@
     "Segoe UI",
     Roboto,
     sans-serif;
+}
+
+/* Smooth scroll only on desktop */
+@media (min-width: 769px) {
+  * {
+    scroll-behavior: smooth;
+  }
 }
 
 .mousemov {
@@ -34,8 +40,8 @@ body {
   background-color: #faf9f7;
   color: #1e2b2f;
   line-height: 1.5;
-  scroll-behavior: smooth;
   position: relative;
+  overflow-x: hidden;
 }
 
 /* premium color palette */
@@ -1129,6 +1135,7 @@ swiper-slide {
     .fleet-card {
       background-color: #ffffff;
       border-radius: 28px;
+      width: 100%;
       overflow: hidden;
       box-shadow: 0 20px 35px -8px rgba(0,0,0,0.05), 0 0 0 1px rgba(0,0,0,0.02);
       transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1);
@@ -1197,8 +1204,14 @@ swiper-slide {
 
     /* card content */
     .card-content {
-      padding: 1.8rem 1.5rem 1.8rem 1.5rem;
+      /* padding: 1.8rem 1.5rem 1.8rem 1.5rem; */
       background: white;
+      padding: 10px 0px;
+      margin: 20px;
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+      /* border: 2px solid red; */
     }
 
     .vehicle-name {
@@ -1207,6 +1220,7 @@ swiper-slide {
       color: #1f2a3a;
       display: flex;
       align-items: center;
+      /* text-align: start; */
       gap: 0.5rem;
       margin-bottom: 0.65rem;
     }
@@ -1237,6 +1251,7 @@ swiper-slide {
       margin-right: 0.5rem;
       margin-bottom: 0.5rem;
       text-transform: uppercase;
+      white-space: nowrap;
     }
 
     .meta-tag i {
@@ -1320,21 +1335,44 @@ swiper-slide {
       text-transform: capitalize;
     }
       .section-title { font-size: 2rem; }
-      .fleet-grid { gap: 1.2rem;
+      .fleet-grid { 
+        gap: 1.2rem;
         padding: 0px 10px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
        }
       .fleet-card{
         /* border: 2px solid red; */
-        width: 100%;
-        
-        /* margin-left: 5%; */
+        width: calc(50% - 0.6rem);
+        max-width: 100%;
+        height: auto;
+      }
+      .card-image {
+        height: 180px !important;
+        min-height: 180px;
       }
       .main-feet-section{
         /* border: 2px solid red; */
         flex-direction: column;
         margin: 0;
         padding: 0;
-        gap: 0;
+        gap: 1rem;
+      }
+      .vehicle-name{
+        /* white-space: nowrap; */
+        /* border: 2px solid gold; */
+      }
+       .card-content{
+        padding: 1rem;
+        margin: 10px;
+       }
+      .meta-tag {
+        display: inline-block;
+        font-size: 0.65rem;
+        padding: 0.25rem 0.7rem;
+        white-space: normal;
+        word-break: break-word;
       }
     }
 

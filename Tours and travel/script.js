@@ -31,6 +31,7 @@
               window.innerWidth <= 680 &&
               window.location.hash === "#mobile-toggle"
             ) {
+              e.preventDefault();
               linkbar.style.display = "none"// push state to remove hash without reload
                mobileToggle.style.display = "flex";
                close.style.display = "none";
@@ -39,6 +40,17 @@
                 document.title,
                 window.location.pathname + window.location.search,
               );
+              
+              // Get the target section and scroll to it smoothly after menu closes
+              const targetId = link.getAttribute("href");
+              if (targetId && targetId.startsWith("#")) {
+                setTimeout(() => {
+                  const targetElement = document.querySelector(targetId);
+                  if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }
+                }, 100);
+              }
             }
           });
         });
@@ -48,10 +60,13 @@
 // document.body.style.background = "red";
 const mouse = document.querySelector(".mousemov");
 
-window.addEventListener("mousemove", function (e) {
-  mouse.style.left = e.clientX + "px";
-  mouse.style.top = e.clientY + "px";
-});
+// Only enable mouse tracking on desktop (not mobile)
+if (window.innerWidth > 768) {
+  window.addEventListener("mousemove", function (e) {
+    mouse.style.left = e.clientX + "px";
+    mouse.style.top = e.clientY + "px";
+  });
+}
 
 
 /* ============================= */
